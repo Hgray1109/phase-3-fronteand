@@ -11,10 +11,10 @@ const[eventData, setEventData] =useState({
 
 return (
 
-    <form className="new-venu-form">
+    <form className="new-venu-form" onClick={(e) => {addVenu(eventData, e)}}>
         <input onChange={(e) => setEventData({...eventData, name:e.target.value})} placeholder="Name"/>
         <input onChange={(e)=>setEventData({...eventData, price:e.target.value})} placeholder="Price" />
-        <input onClick={(e) => {addVenu(eventData);e.preventDefault()}} type="submit" value="New Event" />
+        <input type="submit" value="New Event" />
     </form>
 
 );

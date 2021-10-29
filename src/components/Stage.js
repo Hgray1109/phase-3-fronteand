@@ -1,7 +1,7 @@
 import React from "react";
 import StageCard from "./stageCard";
-import {useEffect, useState} from 'react'
-import Dj from './dj.jsx'
+// import {useEffect, useState} from 'react'
+// import Dj from './dj.js'
 // import {useParams} from "react-router-dom";
 // import logo from '../logo.png'
 // import { NavLink } from "react-router-dom";

@@ -1,7 +1,7 @@
 
 import Navbar from './Navbar';
 import {useEffect, useState } from 'react'
-import Stage from './Stage'
+import Stage from './Stage.js'
 import Event from './Event'
 import NewEventForm from './NewEventForm'
 
@@ -17,9 +17,15 @@ function App() {
   .then(eventobj => setVenu(eventobj))
 }, [])
 
+    const deleteHandler = (id) => {
+        const newVenuArray = venu.filter((venuObj) => venuObj.id !==id)
+        setVenu(newVenuArray)
+        }
 
 
-  function addVenu(newEvent) {
+  function addVenu(newEvent, e) {
+    e.preventDefault()
+    
     fetch("http://localhost:9292/events", {
       method: "POST",
       headers: {
@@ -28,6 +34,7 @@ function App() {
       body:JSON.stringify(newEvent)})
       .then(resp => resp.json())
       .then(resp => {setVenu([...venu, resp])
+        console.log(venu)
       })
   }
  
@@ -65,7 +72,7 @@ return (
             <Stage data={data}/>
           </div>
           <div>
-            <Event venu={venu} />
+            <Event venu={venu} setVenu={setVenu} deleteHandler={deleteHandler}/>
           </div>
 
           {/* </div> */}

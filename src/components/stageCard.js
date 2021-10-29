@@ -1,4 +1,4 @@
-import Dj from './dj.jsx'
+import Dj from './dj.js'
 import {useState} from 'react'
 
 function StageCard({stage}) 
