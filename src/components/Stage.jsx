@@ -10,13 +10,13 @@ import Dj from './dj.jsx'
 
 const Stage = ({data}) => { 
     
-    const [djs, setDjs] = useState([])
+    // const [djs, setDjs] = useState([])
 
-    useEffect (() => {
-    fetch("http://localhost:9292/djs")
-    .then(res => res.json()
-    .then(djData => setDjs(djData)))
-    }, [])
+    // useEffect (() => {
+    // fetch("http://localhost:9292/djs")
+    // .then(res => res.json()
+    // .then(djData => setDjs(djData)))
+    // }, [])
     
 
     // function handleClick (e) {
@@ -39,7 +39,7 @@ const Stage = ({data}) => {
         <div className= "home">
             <h2>Stage</h2>
             <li> 
-            {data.map(stage => <StageCard key={stage.id} stage={stage} djs={djs}/>)}
+            {data.map(stage => <StageCard key={stage.id} stage={stage}/>)}
             </li>
         </div>
      );

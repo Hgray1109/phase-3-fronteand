@@ -1,6 +1,9 @@
 const Dj = ({dj}) => {
+
+    
+
     return ( 
-        <h1>{dj.name}</h1>
+        <h1 onClick={() => console.log(dj.id)}>{dj.name}</h1>
      )
 }
  
